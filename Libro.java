@@ -1,11 +1,20 @@
 public class Libro
 {
     private String aut;
-    private String libr;
+    private String tit;
     
-    Libro(String autor, String libro)
+    Libro(String autor, String titulo)
     {
         aut = autor;
-        libr = libro;
+        tit = titulo;
+    }
+    
+    public String dimeAutor()
+    {
+        return(aut);
+    }
+    
+    public String dimeTitulo()
+    {return(tit);
     }
 }
