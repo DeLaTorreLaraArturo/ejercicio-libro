@@ -4,6 +4,7 @@ public class Libro
     private String tit;
     private int pag;
     private String nRef;
+    private int prestamos;
     
     Libro(String autor, String titulo, int pagina)
     {
@@ -11,6 +12,7 @@ public class Libro
         tit = titulo;
         pag = pagina;
         nRef = "";
+        prestamos = 0;
     }
     
     public String dimeAutor()
@@ -54,6 +56,10 @@ public class Libro
             cadRes += "ZZZ";
         }
         
+        cadRes += ", ";
+        cadRes += "Prestamos: ";
+        cadRes += prestamos; 
+        
         return cadRes;
     }
     
@@ -79,5 +85,15 @@ public class Libro
         {
             return ("ZZZ");
         }
+    }
+    
+    public void prestar()
+    {
+        prestamos ++;
+    }
+    
+    public int dimePrestamos()
+    {
+        return prestamos;
     }
 }
