@@ -1,3 +1,7 @@
+/**
+ * @author Arturo De La Torre Lara
+ * @version 30 de Agosto del 2017
+ */
 public class Libro
 {
     private String aut;
@@ -6,7 +10,7 @@ public class Libro
     private String nRef;
     private int prestamos;
     
-    Libro(String autor, String titulo, int pagina)
+    public Libro(String autor, String titulo, int pagina)
     {
         aut = autor;
         tit = titulo;
@@ -14,22 +18,31 @@ public class Libro
         nRef = "";
         prestamos = 0;
     }
-    
+    /**
+     * @return Retorna el nombre del autor
+     */
     public String dimeAutor()
     {
         return(aut);
     }
-    
+    /**
+     * @return Retorna el nombre del libro
+     */
     public String dimeTitulo()
     {
         return(tit);
     }
-    
+    /**
+     * @return Retorna el numero de paginas que tiene el libro
+     */
     public int dimePaginas()
     {
         return(pag);
     }
-    
+    /**
+     * Concatena el autor, titulo, numero de paginas numero de referencia, numero de prestamos y los regresa en una sola cadena
+     * @return Regresa una cadena con los datos del libro
+     */
     public String dimeDetalles()
     {
         String cadRes = "";
@@ -62,7 +75,10 @@ public class Libro
         
         return cadRes;
     }
-    
+    /**
+     * Cambia el numero de referencia que esta por default ("ZZZ") siempre y cuando sea menor de 3 letras
+     * @param numeroReferencia la cadena numeor de referencia cambia la cadena que estaba "ZZZ"
+     */
     public void cambiaNumRef(String numeroReferencia)
     {
         if(numeroReferencia.length() <= 3)
@@ -74,7 +90,9 @@ public class Libro
             nRef = nRef;
         }
     }
-    
+    /**
+     * @return Regresa solo el numero de referencia
+     */
     public String dimeNumRef()
     {
         if(nRef.length() != 0)
@@ -86,12 +104,16 @@ public class Libro
             return ("ZZZ");
         }
     }
-    
+    /**
+     * Si se hace un prestamo de el libro aumenta el contador de prestamo
+     */
     public void prestar()
     {
         prestamos ++;
     }
-    
+    /**
+     * @return Regresa el numero de prestamos realizados del libro
+     */
     public int dimePrestamos()
     {
         return prestamos;
